@@ -29,8 +29,10 @@
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="products.jsp">굿즈</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.jsp">응원의 한마디</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="basket.html">장바구니</a></li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="login.html">로그인</a></li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">회원가입</a></li>
+                
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="login.jsp">로그인</a></li>
+                
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="join.jsp">회원가입</a></li>
             </ul>
         </div>
     </div>
