@@ -20,30 +20,44 @@
 		</header>
         
         <!-- Post Content-->
-		<article class="mb-4">
-			<div class="container px-4 px-lg-5">
-				<div class="row gx-4 gx-lg-5 justify-content-center">
-					<div class="col-md-10 col-lg-8 col-xl-7">
-						<table style = "margin-left:auto; margin-right:auto; text-align: center;">
-							<tr>
-								<input type=button value="글쓰기" OnClick="window.location='post_write.jsp'">
-							</tr>
-						</table>
-						<table style = "margin-left:auto; margin-right:auto; text-align:center;" cellspacing=1 border=1 width=100%;>
-							<tr>
-								<td width=10%> <p align=center>번호</p> </td>
-								<td width=10%> <p align=center>이름</p> </td>
-								<td width=65%> <p align=center>내용</p> </td>
-								<td width=15%> <p align=center>등록일</p> </td>
-							</tr>
-						</table>
-					</div>
-				</div>
+
+		<div class="container px-4 px-lg-5">
+			<div class="row gx-4 gx-lg-5 justify-content-center">
+				<table class="table table-striped" style = "margin-left:auto; margin-right:auto; text-align:center; border: 3px solid #dddddd">
+					<thead>
+						<tr>
+							<th style="background-color: #B1AF72; text-align: center;">번호</th>
+							<th style="background-color: #2A61B1; text-align: center;">한마디</th>
+							<th style="background-color: #B1AF72; text-align: center;">작성자</th>
+							<th style="background-color: #2A61B1; text-align: center;">작성날짜</th>
+						</tr>
+				 	</thead>
+				 	<tbody>
+						<tr>
+							<td>1</td>
+							<td>파이팅</td>
+							<td>조수빈</td>
+							<td>2021-11-21</td>
+						</tr>						 	
+						<tr>
+							<td>1</td>
+							<td>파이팅</td>
+							<td>조수빈</td>
+							<td>2021-11-21</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>파이팅</td>
+							<td>조수빈</td>
+							<td>2021-11-21</td>
+						</tr>								
+				 	</tbody>	
+				</table>
+				<table class="table" style = "margin-left:auto; margin-right:auto; text-align:center;">
+					<input type=button value="글쓰기" style = "margin-left:auto; width:18%; background-color: #B1AF72; color:#EEEEEE;" OnClick="window.location='post_write.jsp'">
+				</table>
 			</div>
-		</article>
-        
-        
-        
+		</div>     
                 
 		<jsp:include page="footer.jsp" />
 		

@@ -64,13 +64,6 @@ public class Product implements Serializable {
 		this.manufacturer = manufacturer;
 	}
 
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
 
 	public long getUnitsInStock() {
 		return unitsInStock;
@@ -78,14 +71,6 @@ public class Product implements Serializable {
 
 	public void setUnitsInStock(long unitsInStock) {
 		this.unitsInStock = unitsInStock;
-	}
-
-	public String getCondition() {
-		return condition;
-	}
-
-	public void setCondition(String condition) {
-		this.condition = condition;
 	}
 
 	public String getFilename() {

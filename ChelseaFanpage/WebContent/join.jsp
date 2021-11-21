@@ -12,7 +12,7 @@
 
 <body>
 	<!-- Page Header-->
-	<header class="masthead" style="background-image: url('assets/img/home.jpg')">
+	<header class="masthead" style="background-image: url('assets/img/index.jpg')">
 	     <div class="container position-relative px-4 px-lg-5">
 	         <div class="row gx-4 gx-lg-5 justify-content-center">
 	             <div class="col-md-10 col-lg-8 col-xl-7">
@@ -38,14 +38,14 @@
 					</div>
 					<br>					
 					<div class = "form-group">
-						<input type="password" class="form-control" placeholder="이름" name="userName" maxlength="20">
+						<input type="text" class="form-control" placeholder="이름" name="userName" maxlength="20">
 					</div>
 					<br>
 					<div class = "form-group">
 						<input type="email" class="form-control" placeholder="이메일" name="userEmail" maxlength="50">
 					</div>
 					<br>
-					<input type="submit" class="btn btn-primary form-control" style="background-color: #294171;" value="회원가입">
+					<input type="submit" class="btn btn-primary form-control" style="background-color: #294171; width: 20%;"  value="회원가입">
 				</form>
 			</div>
 	</div>
