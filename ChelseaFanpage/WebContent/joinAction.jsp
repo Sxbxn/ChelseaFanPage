@@ -19,7 +19,13 @@
 </head>
 <body>	
 	<%
-
+		if(userID != null) {
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('이미 로그인 되어 있습니다.')");
+			script.println("location.href = 'index.jsp'");
+			script.println("</script>");
+		}
 
 		if (user.getUserID() == null || user.getUserPassword() == null || user.getUserName() == null || user.getUserEmail() == null) {
 			PrintWriter script = response.getWriter();

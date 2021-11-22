@@ -1,44 +1,74 @@
-﻿<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
 <%@ page import="dto.Product"%>
-<%@ page import="dao.ProductRepository"%>
-<html>
-<head>
-<title>상품 상세 정보</title>
-</head>
-<body>
-	<jsp:include page="header.jsp" />
+<%@ page import="dao.ProductRepository"%>    
+
+<%@ page errorPage ="exceptionNoProductId.jsp"%>
+
+    
+<!DOCTYPE html>
+<html lang="en">
+	<%@ include file="header.jsp"%>
 	
-	<div class="jumbotron">
-		<div class="container">
-			<h1 class="display-3">상품 정보</h1>
-		</div>
-	</div>
-	<!-- 
-	<%
-		String id = request.getParameter("id");
-		ProductRepository dao = ProductRepository.getInstance();
-		Product product = dao.getProductById(id);
-	%>
-	 -->
-	 
-	<div class="container">
-		<div class="row">
-			<div class ="col-md-5">
-				<img src="c:/upload/<%=product.getFilename()%>" style="width: 100%" />
+	<script type="text/javascript">
+	function addToCart() {
+		if (confirm("상품을 장바구니에 추가하시겠습니까?")) {
+			document.addForm.submit();
+		} else {		
+			document.addForm.reset();
+		}
+	}
+	</script>
+
+	<body>
+		<header class="masthead" style="background-image: url('assets/img/post.jpg')">
+			<div class="container position-relative px-4 px-lg-5">
+				<div class="row gx-4 gx-lg-5 justify-content-center">
+					<div class="col-md-10 col-lg-8 col-xl-7">
+		                <div class="site-heading">
+		                    <h1>굿즈 정보</h1>
+		                    <br>
+							<span class="subheading">다양한 굿즈들을 만나보세요.</span>
+						</div>
+		            </div>
+		        </div>
+		    </div>
+		</header>
+        
+        <%
+			String id = request.getParameter("id");
+			ProductRepository dao = ProductRepository.getInstance(); 
+			Product product = dao.getProductById(id);
+		%>
+        
+        <!-- Post Content-->
+
+		<div class="container px-4 px-lg-5">
+			<div class="row gx-4 gx-lg-5 justify-content-center">
+				<div class ="col-md-5">
+					<img src="assets/img/<%=product.getFilename()%>" style="width: 100%" />
+				</div>
+				<div class="col-md-6">
+					<h3><%=product.getpName()%></h3>
+					<p><%=product.getpDescription()%>
+					<p><b>상품 코드 : </b><span class="badge badge-danger"> <%=product.getpID()%></span>
+					<h4><%=product.getUnitPrice()%>원</h4>
+					<p><form name="addForm" action="./addCart.jsp?id=<%=product.getpID()%>" method="post">
+						<a href="#" class="btn btn-info" onclick="addToCart()"> 상품 주문 &raquo;</a> 
+						<a href="./cart.jsp" class="btn btn-warning"> 장바구니 &raquo;</a>
+						<a href="./products.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a>
+					   </form>
+				</div>
+		
 			</div>
-			<div class="col-md-6">
-				<h3><%=product.getPname()%></h3>
-				<p><%=product.getDescription()%>
-				<p><b>상품 코드 : </b><span class="badge badge-danger"> <%=product.getProductId()%></span>
-				<p><b>제조사</b> : <%=product.getManufacturer()%>
-				<p><b>분류</b> : <%=product.getCategory()%>
-				<p><b>재고 수</b> : <%=product.getUnitsInStock()%>
-				<h4><%=product.getUnitPrice()%>원</h4>
-				<p><a href="#" class="btn btn-info"> 상품 주문 &raquo;</a> <a	href="./products.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a>
-			</div>
-		</div>
-		<hr>
-	</div>
-<!--	<jsp:include page="footer.jsp" /> -->
-</body>
+		</div>     
+                
+		<jsp:include page="footer.jsp" />
+		
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>

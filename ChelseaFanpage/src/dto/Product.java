@@ -1,76 +1,62 @@
 package dto;
 
-import java.io.Serializable;
-
-public class Product implements Serializable {
-
-	private static final long serialVersionUID = -4274700572038677000L;
-
-	private String productId;	
-	private String pname;		
-	private Integer unitPrice; 
-	private String description; 
-	private String manufacturer;
-	private long unitsInStock; 
-	private String filename; 
+public class Product {
+	private String pID;
+	private String pName;
+	private int unitPrice;
+	private String pDescription;
+	private String filename;
+	private int quantity;
 
 	public Product() {
 		super();
 	}
 
-	public Product(String productId, String pname, Integer unitPrice) {
-		this.productId = productId;
-		this.pname = pname;
+	public Product(String pID, String pName, Integer unitPrice) {
+		this.pID = pID;
+		this.pName = pName;
 		this.unitPrice = unitPrice;
 	}
-
-	public String getProductId() {
-		return productId;
+	
+	public Product(String pID, String pName, Integer unitPrice, String pDescription, String filename, Integer quantity) {
+		this.pID = pID;
+		this.pName = pName;
+		this.unitPrice = unitPrice;
+		this.pDescription = pDescription;
+		this.filename = filename;
+		this.quantity = quantity;
 	}
 
-	public String getPname() {
-		return pname;
+	public String getpID() {
+		return pID;
 	}
 
-	public void setPname(String pname) {
-		this.pname = pname;
+	public void setpID(String pID) {
+		this.pID = pID;
 	}
 
-	public void setProductId(String productId) {
-		this.productId = productId;
+	public String getpName() {
+		return pName;
 	}
 
-	public Integer getUnitPrice() {
+	public void setpName(String pName) {
+		this.pName = pName;
+	}
+
+	public int getUnitPrice() {
 		return unitPrice;
 	}
 
-	public void setUnitPrice(Integer unitPrice) {
+	public void setUnitPrice(int unitPrice) {
 		this.unitPrice = unitPrice;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getpDescription() {
+		return pDescription;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getManufacturer() {
-		return manufacturer;
-	}
-
-	public void setManufacturer(String manufacturer) {
-		this.manufacturer = manufacturer;
-	}
-
-
-	public long getUnitsInStock() {
-		return unitsInStock;
-	}
-
-	public void setUnitsInStock(long unitsInStock) {
-		this.unitsInStock = unitsInStock;
+	public void setpDescription(String pDescription) {
+		this.pDescription = pDescription;
 	}
 
 	public String getFilename() {
@@ -81,4 +67,12 @@ public class Product implements Serializable {
 		this.filename = filename;
 	}	
 	
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
 }

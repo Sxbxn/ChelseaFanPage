@@ -1,12 +1,18 @@
 package dao;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import dto.Product;
 
 public class ProductRepository {
-
-	private ArrayList<Product> listOfProducts = new ArrayList<Product>();
+	private Connection conn;
+	private ResultSet rs;
+	
+	private static ArrayList<Product> listOfProducts = new ArrayList<Product>();
 	private static ProductRepository instance = new ProductRepository();
 
 	public static ProductRepository getInstance(){
@@ -15,27 +21,35 @@ public class ProductRepository {
 
 
 	public ProductRepository() {
-		Product phone = new Product("P1234", "iPhone 6s", 800000);
-		phone.setDescription("4.7-inch, 1334X750 Renina HD display, 8-megapixel iSight Camera");
-		phone.setManufacturer("Apple");
-		phone.setUnitsInStock(1000);
-		phone.setFilename("P1234.png");
 
-		Product notebook = new Product("P1235", "LG PC �׷�", 1500000);
-		notebook.setDescription("13.3-inch, IPS LED display, 5rd Generation Intel Core processors");
-		notebook.setManufacturer("LG");
-		notebook.setUnitsInStock(1000);
-		notebook.setFilename("P1235.png");
-
-		Product tablet = new Product("P1236", "Galaxy Tab S", 900000);
-		tablet.setDescription("212.8*125.6*6.6mm,  Super AMOLED display, Octa-Core processor");
-		tablet.setManufacturer("Samsung");
-		tablet.setUnitsInStock(1000);
-		tablet.setFilename("P1236.png");
-
-		listOfProducts.add(phone);
-		listOfProducts.add(notebook);
-		listOfProducts.add(tablet);
+		try {
+			String dbURL = "jdbc:mysql://localhost:3307/Chelsea?serverTimezone=UTC";
+			String dbID = "root";
+			String dbPassword = "1202";
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		//listOfProducts initiate
+		String SQL = "SELECT * FROM PRODUCT";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				listOfProducts.add(new Product(rs.getString("pID"), rs.getString("pName"), rs.getInt("unitPrice"), rs.getString("pDescription"), rs.getString("filename"), rs.getInt("quantity")));
+			}
+			if (rs != null)
+				rs.close();
+		 	if (pstmt != null)
+		 		pstmt.close();
+		 	if (conn != null)
+				conn.close();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public ArrayList<Product> getAllProducts() {
@@ -44,10 +58,9 @@ public class ProductRepository {
 	
 	public Product getProductById(String productId) {
 		Product productById = null;
-
 		for (int i = 0; i < listOfProducts.size(); i++) {
 			Product product = listOfProducts.get(i);
-			if (product != null && product.getProductId() != null && product.getProductId().equals(productId)) {
+			if (product != null && product.getpID() != null && product.getpID().equals(productId)) {
 				productById = product;
 				break;
 			}

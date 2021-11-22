@@ -9,7 +9,6 @@
 <title>Insert title here</title>
 </head>
 
-
 <body>
 	<!-- Page Header-->
 	<header class="masthead" style="background-image: url('assets/img/index.jpg')">

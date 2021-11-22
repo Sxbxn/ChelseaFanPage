@@ -1,9 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="board.BoardDAO" %>
+<%@ page import="board.Board" %>
+<%@ page import="java.util.ArrayList" %>    
+
 <!DOCTYPE html>
 <html lang="en">
 	<%@ include file="header.jsp"%>
-
+	
+	<%
+		int pageNumber = 1;
+		if (request.getParameter("pageNumber") != null) {
+			pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
+		}
+	%>
+	
 	<body>
 		<header class="masthead" style="background-image: url('assets/img/post.jpg')">
 			<div class="container position-relative px-4 px-lg-5">
@@ -26,35 +39,42 @@
 				<table class="table table-striped" style = "margin-left:auto; margin-right:auto; text-align:center; border: 3px solid #dddddd">
 					<thead>
 						<tr>
-							<th style="background-color: #B1AF72; text-align: center;">번호</th>
-							<th style="background-color: #2A61B1; text-align: center;">한마디</th>
-							<th style="background-color: #B1AF72; text-align: center;">작성자</th>
-							<th style="background-color: #2A61B1; text-align: center;">작성날짜</th>
+							<th style="background-color: #c2e9fb; text-align: center;">번호</th>
+							<th style="background-color: #a1c4fd; text-align: center;">한마디</th>
+							<th style="background-color: #c2e9fb; text-align: center;">작성자</th>
+							<th style="background-color: #a1c4fd; text-align: center;">작성날짜</th>
 						</tr>
 				 	</thead>
 				 	<tbody>
+				 		<%
+				 			BoardDAO boardDAO = new BoardDAO();
+				 			ArrayList<Board> list = boardDAO.getList(pageNumber);
+				 			for(int i = 0; i < list.size(); i++) {				 			
+				 		%>
 						<tr>
-							<td>1</td>
-							<td>파이팅</td>
-							<td>조수빈</td>
-							<td>2021-11-21</td>
+							<td><%= list.get(i).getbID() %></td>
+							<td><%= list.get(i).getbContent() %></td>
+							<td><%= list.get(i).getUserID() %></td>
+							<td><%= list.get(i).getbDate().substring(0, 11) + list.get(i).getbDate().substring(11, 13) + "시 " + list.get(i).getbDate().substring(14, 16) + "분 "%></td>														
 						</tr>						 	
-						<tr>
-							<td>1</td>
-							<td>파이팅</td>
-							<td>조수빈</td>
-							<td>2021-11-21</td>
-						</tr>
-						<tr>
-							<td>1</td>
-							<td>파이팅</td>
-							<td>조수빈</td>
-							<td>2021-11-21</td>
-						</tr>								
+						<%
+				 			}
+						%>	
 				 	</tbody>	
 				</table>
 				<table class="table" style = "margin-left:auto; margin-right:auto; text-align:center;">
-					<input type=button value="글쓰기" style = "margin-left:auto; width:18%; background-color: #B1AF72; color:#EEEEEE;" OnClick="window.location='post_write.jsp'">
+				<%
+					if(pageNumber != 1) {
+				%>
+					<a href="post.jsp?pageNumber=<%=pageNumber - 1%>" class="btn btn-success btn-arraw-left" style="margin-right:auto; width:8%; background-color: #a1c4fd; color:#000000;">이전</a> 
+				<%
+					} if(boardDAO.nextPage(pageNumber + 1)) {
+				%>
+					<a href="post.jsp?pageNumber=<%=pageNumber + 1%>" class="btn btn-success btn-arraw-right" style="margin-right:auto; width:8%; background-color: #a1c4fd; color:#000000;">다음</a>
+				<%
+					}
+				%> 
+					<input type=button value="글쓰기" style = "margin-left:auto; width:18%; background-color: #a1c4fd; color:#000000;" OnClick="window.location='write.jsp'">
 				</table>
 			</div>
 		</div>     

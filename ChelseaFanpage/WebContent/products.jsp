@@ -1,44 +1,71 @@
-<%@ page contentType="text/html; charset=utf-8"%>
-<%@ page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList" %>
 <%@ page import="dto.Product"%>
-<%@ page import="dao.ProductRepository"%>
+<%@ page import="dao.ProductRepository"%>    
+<%@ page errorPage ="exceptionNoProductId.jsp"%>
 
-<html>
-<head>
-<link rel ="stylesheet" href ="./resources/css/bootstrap.min.css" />
-<title>상품 목록</title>
-</head>
-<body>
-	<jsp:include page="header.jsp" />
-	<div class="jumbotron">
-		<div class="container">
-			<h1 class="display-3">상품목록</h1>
-		</div>
-	</div>
-	<%
-		ProductRepository dao = ProductRepository.getInstance();
-		ArrayList<Product> listOfProducts = dao.getAllProducts();
-	%>
+    
+<!DOCTYPE html>
+<html lang="en">
+	<%@ include file="header.jsp"%>
+	
+	<body>
+		<header class="masthead" style="background-image: url('assets/img/post.jpg')">
+			<div class="container position-relative px-4 px-lg-5">
+				<div class="row gx-4 gx-lg-5 justify-content-center">
+					<div class="col-md-10 col-lg-8 col-xl-7">
+		                <div class="site-heading">
+		                    <h1>굿즈 정보</h1>
+		                    <br>
+							<span class="subheading">다양한 굿즈들을 만나보세요.</span>
+						</div>
+		            </div>
+		        </div>
+		    </div>
+		</header>
+		
+	    <%
+	        ProductRepository dao = ProductRepository.getInstance();
+	        ArrayList<Product> listOfBooks = dao.getAllProducts();
+	    %>
 
-	<div class="container">
-		<div class="row" align="center">
-			<%
-				for (int i = 0; i < listOfProducts.size(); i++) {
-					Product product = listOfProducts.get(i);
-			%>
-			<div class="col-md-4">
-				<img src ="c:/upload/<%=product.getFilename()%>" style ="width: 100%">
-				<h3><%=product.getPname()%></h3>
-				<p><%=product.getDescription()%>
-				<p><%=product.getUnitPrice()%>원
-				<p><a href="./product.jsp?id=<%=product.getProductId()%>" class="btn btn-secondary" role="button"> 상세 정보 &raquo;</a>
+		<div class="container px-4 px-lg-5">
+			<div class="row gx-4 gx-lg-5 justify-content-center">
+				<%@ include file="dbconn.jsp"%>
+					<%
+						String sql = "select * from product";
+						pstmt = conn.prepareStatement(sql);
+						rs = pstmt.executeQuery();
+						while (rs.next()) {
+					%>
+					<div class="col-md-4">
+						<img src="assets/img/<%=rs.getString("fileName")%>"" style="width: 100%">
+						<h3><%=rs.getString("pName")%></h3>
+						<p><%=rs.getString("pDescription")%>
+						<p><%=rs.getString("UnitPrice")%>원
+						<p>
+							<a href="./product.jsp?id=<%=rs.getString("pID")%>"
+								class="btn btn-secondary" role="button"> 상세 정보 &raquo;></a>
+					</div>
+					<%
+						}
+								
+					if (rs != null)
+						rs.close();
+				 	if (pstmt != null)
+				 		pstmt.close();
+				 	if (conn != null)
+						conn.close();
+					%>
 			</div>
-			<%
-				}
-			%>
-		</div>
-		<hr>
-	</div>
-<!--	<jsp:include page="footer.jsp" /> -->
-</body>
+		</div>     
+                
+		<jsp:include page="footer.jsp" />
+		
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
