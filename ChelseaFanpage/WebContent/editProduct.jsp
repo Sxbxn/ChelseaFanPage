@@ -17,14 +17,14 @@
 	%>
 	<%@ include file="header.jsp"%>
 	<body>
-		<header class="masthead" style="background-image: url('assets/img/post.jpg')">
+		<header class="masthead" style="background-image: url('assets/img/add.jpg')">
 			<div class="container position-relative px-4 px-lg-5">
 				<div class="row gx-4 gx-lg-5 justify-content-center">
 					<div class="col-md-10 col-lg-8 col-xl-7">
 		                <div class="site-heading">
-		                    <h1>상품 편집</h1>
+		                    <h1>상품 관리</h1>
 		                    <br>
-							<span class="subheading">상품 편집</span>
+							<span class="subheading">상품을 수정하거나 삭제하는 페이지입니다.</span>
 						</div>
 		            </div>
 		        </div>
@@ -36,6 +36,7 @@
 		<div class="container px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<%@ include file="dbconn.jsp"%>
+				
 				<%
 					String sql = "select * from product";
 					pstmt = conn.prepareStatement(sql);
@@ -43,19 +44,19 @@
 					while (rs.next()) {
 				%>
 				<div class="col-md-4">
-					<img src="c:/upload/<%=rs.getString("p_fileName")%>" style="width: 100%">
-					<h3><%=rs.getString("p_name")%></h3>
-					<p><%=rs.getString("p_description")%>
-					<p><%=rs.getString("p_UnitPrice")%>원
+					<img src="/subin/Desktop/Study/JSP_Project/ChelseaFanpage/WebContent/assets/img/<%=rs.getString("filename")%>" style="width: 100%">
+					<h3><%=rs.getString("pName")%></h3>
+					<p><%=rs.getString("pDescription")%>
+					<p><%=rs.getString("unitPrice")%>원
 					<p>
 						<%
 							if (edit.equals("update")) {
 						%>
-						<a href="./updateProduct.jsp?id=<%=rs.getString("p_id")%>"	class="btn btn-success" role="button"> 수정 &raquo;></a>
+						<a href="./updateProduct.jsp?id=<%=rs.getString("pID")%>" class="btn btn-success" role="button">수정 &raquo;></a>
 						<%
 							} else if (edit.equals("delete")) {
 						%>
-						<a href="#" onclick="deleteConfirm('<%=rs.getString("p_id")%>')" class="btn btn-danger" role="button">삭제 &raquo;></a>
+						<a href="#" onclick="deleteConfirm('<%=rs.getString("pID")%>')" class="btn btn-danger" role="button">삭제 &raquo;></a>
 						<%
 							}
 						%>				

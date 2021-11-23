@@ -30,7 +30,7 @@
                         </a>
                     </li>
                 </ul>
-                <div class="small text-center text-muted fst-italic">Copyright &copy; 컴공 17 조수빈</div>
+                <div class="small text-center text-muted fst-italic">Copyright &copy; 컴퓨터공학부 17학번 조수빈</div>
             </div>
         </div>
     </div>

@@ -22,7 +22,7 @@
 	</script>
 
 	<body>
-		<header class="masthead" style="background-image: url('assets/img/post.jpg')">
+		<header class="masthead" style="background-image: url('assets/img/gift.jpg')">
 			<div class="container position-relative px-4 px-lg-5">
 				<div class="row gx-4 gx-lg-5 justify-content-center">
 					<div class="col-md-10 col-lg-8 col-xl-7">
@@ -55,8 +55,8 @@
 					<p><b>상품 코드 : </b><span class="badge badge-danger"> <%=product.getpID()%></span>
 					<h4><%=product.getUnitPrice()%>원</h4>
 					<p><form name="addForm" action="./addCart.jsp?id=<%=product.getpID()%>" method="post">
-						<a href="#" class="btn btn-info" onclick="addToCart()"> 상품 주문 &raquo;</a> 
-						<a href="./cart.jsp" class="btn btn-warning"> 장바구니 &raquo;</a>
+						<a href="#" class="btn btn-primary" onclick="addToCart()"> 장바구니에 담기 &raquo;</a> 
+						<a href="./cart.jsp" class="btn btn-success" > 장바구니로 이동 &raquo;</a>
 						<a href="./products.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a>
 					   </form>
 				</div>

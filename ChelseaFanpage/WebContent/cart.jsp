@@ -13,14 +13,14 @@
 	<%@ include file="header.jsp"%>
 
 	<body>
-		<header class="masthead" style="background-image: url('assets/img/post.jpg')">
+		<header class="masthead" style="background-image: url('assets/img/carttt.jpg')">
 			<div class="container position-relative px-4 px-lg-5">
 				<div class="row gx-4 gx-lg-5 justify-content-center">
 					<div class="col-md-10 col-lg-8 col-xl-7">
 		                <div class="site-heading">
 		                    <h1>장바구니</h1>
 		                    <br>
-							<span class="subheading">응원의 한마디 남겨주세요!</span>
+							<span class="subheading">장바구니에 담겨있는 굿즈들입니다.</span>
 						</div>
 		            </div>
 		        </div>
@@ -31,20 +31,17 @@
 
 		<div class="container px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
+				<input type=button value="쇼핑 계속하기" style = "margin-right:auto; width:15%; background-color: #a1c4fd; color:#EEEEEE;" OnClick="window.location='products.jsp'">
 				<table class="table table-striped" style = "margin-left:auto; margin-right:auto; text-align:center; border: 3px solid #dddddd">
-					<tr>
-						<td align="left"><a href="./deleteCart.jsp?cartId=<%=cartId%>" class="btn btn-danger">삭제하기</a></td>
-						<td align="right"><a href="./shippingInfo.jsp?cartId=<%= cartId %>" class="btn btn-success">주문하기</a></td>
-					</tr>
-				</table>
-				<table class="table" style = "margin-left:auto; margin-right:auto; text-align:center;">
 					<tr>
 						<th>상품</th>
 						<th>가격</th>
 						<th>수량</th>
 						<th>소계</th>
 						<th>비고</th>
-					</tr>
+					</tr>					
+				</table>
+				<table class="table table-striped" style = "margin-left:auto; margin-right:auto; text-align:center; border: 3px solid #dddddd">
 					<%				
 						int sum = 0;
 						ArrayList<Product> cartList = (ArrayList<Product>) session.getAttribute("cartlist");
@@ -61,7 +58,7 @@
 						<td><%=product.getUnitPrice()%></td>
 						<td><%=product.getQuantity()%></td>
 						<td><%=total%></td>
-						<td><a href="./removeCart.jsp?id=<%=product.getpID()%>" class="badge badge-danger">삭제</a></td>
+						<td><a href="./removeCart.jsp?id=<%=product.getpID()%>" class="badge badge-danger" style= "color: #000000" >삭제</a></td>
 					</tr>
 					<%
 						}
@@ -74,7 +71,11 @@
 						<th></th>
 					</tr>
 				</table>
-				<input type=button value="쇼핑 계속하기" style = "margin-left:auto; width:18%; background-color: #B1AF72; color:#EEEEEE;" OnClick="window.location='products.jsp'">
+				<table>
+					<tr>
+						<td align="right"><a href="./shippingInfo.jsp?cartId=<%= cartId %>" class="btn btn-success" style= "background-color: #a1c4fd">주문하기</a></td>
+					</tr>
+				</table>
 				
 			</div>
 		</div>     

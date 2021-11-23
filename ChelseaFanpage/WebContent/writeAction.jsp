@@ -27,7 +27,6 @@
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
 				script.println("alert('응원의 한마디를 작성해주세요!')");
-				
 				script.println("history.back()");
 				script.println("</script>");
 			} else { // 보드 객체 값이 있으면, 

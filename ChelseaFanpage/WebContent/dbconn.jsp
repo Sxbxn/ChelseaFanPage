@@ -7,7 +7,7 @@
 	ResultSet rs = null;
 	
 	try {
-		String url = "jdbc:mysql://localhost:3307/Chelsea?serverTimezone=Asia/Seoul&useSSL=false";
+		String url = "jdbc:mysql://localhost:3307/Chelsea?serverTimezone=UTC";
 		String user = "root";
 		String password = "1202";
 

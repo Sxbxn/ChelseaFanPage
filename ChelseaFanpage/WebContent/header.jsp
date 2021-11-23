@@ -57,11 +57,11 @@
 		%>
 		
 		<% 
-			if(userID != null) {
+			if(userID != "subin") {
 		%>                
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="addProduct.jsp">상품 등록</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="editProduct.jsp?edit=update">상품 수정</a></li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="editProduct.jsp?edit=update">상품 삭제</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="editProduct.jsp?edit=delete">상품 삭제</a></li>
 		<%
 			}
 		%>
