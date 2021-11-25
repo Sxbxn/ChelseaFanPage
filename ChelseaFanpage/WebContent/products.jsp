@@ -6,9 +6,8 @@
 <%@ page import="java.io.PrintWriter" %>
 <%@ page errorPage ="exceptionNoProductId.jsp"%>
 
-    
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<%@ include file="header.jsp"%>
 	<%
 	if(userID == null) { // 사용자가 없으면 

@@ -9,7 +9,7 @@
 <%@ include file="dbconn.jsp" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<%@ include file="header.jsp"%>
 
 <%

@@ -1,25 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<%@ include file="header.jsp"%>
 
 	<body>
-		<header class="masthead" style="background-image: url('assets/img/post.jpg')">
+		<header class="masthead" style="background-image: url('assets/img/q.jpg')">
 			<div class="container position-relative px-4 px-lg-5">
 				<div class="row gx-4 gx-lg-5 justify-content-center">
 					<div class="col-md-10 col-lg-8 col-xl-7">
 		                <div class="site-heading">
 		                    <h1>페이지 오류</h1>
 		                    <br>
-							<span class="subheading">응원의 한마디 남겨주세요!</span>
+							<span class="subheading">잘못된 접근입니다.</span>
 						</div>
 		            </div>
 		        </div>
 		    </div>
 		</header>
-        
-        <!-- Post Content-->
 
 		<div class="container px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
@@ -31,7 +29,7 @@
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<p><%=request.getRequestURL()%></p>
 				<p>
-					<a href="products.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a>
+					<a href="index.jsp" class="btn btn-secondary">메인 &raquo;</a>
 				</p>		
 			</div>
 		</div>

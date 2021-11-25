@@ -3,7 +3,7 @@
 <%@ page import="java.io.PrintWriter" %>
     
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<%@ include file="header.jsp"%>
 	<%
 	if(userID == null) { // 사용자가 없으면 
@@ -28,8 +28,6 @@
 		        </div>
 		    </div>
 		</header>
-        
-        <!-- Post Content-->
 
 		<div class="container px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">

@@ -7,12 +7,11 @@
 <jsp:setProperty name="board" property="bContent" />
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<%@ include file="header.jsp"%>
 	
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 <body>	
 	<%

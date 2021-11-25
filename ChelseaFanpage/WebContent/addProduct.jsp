@@ -5,7 +5,7 @@
 <%@ page import="java.util.ArrayList" %>    
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<%@ include file="header.jsp"%>
 	
 	<body>
@@ -22,12 +22,10 @@
 		        </div>
 		    </div>
 		</header>
-        
-        <!-- Post Content-->
 
 		<div class="container px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
-				<form name="newProduct" action="./processAddProduct.jsp" class="form-horizontal" method="post" enctype="multipart/form-data">
+				<form name="newProduct" action="./processAddProduct.jsp" class="form-inline center" method="post" enctype="multipart/form-data" style="padding-left:30%">
 					<div class="form-group row">
 						<label class="col-sm-2">제품코드</label>
 						<div class="col-sm-3">

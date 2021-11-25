@@ -5,7 +5,7 @@
 <%@ page import="dao.ProductRepository"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<%
 		String cartId = session.getId();
 	%>
@@ -13,7 +13,7 @@
 	<%@ include file="header.jsp"%>
 
 	<body>
-		<header class="masthead" style="background-image: url('assets/img/carttt.jpg')">
+		<header class="masthead" style="background-image: url('assets/img/cart.jpg')">
 			<div class="container position-relative px-4 px-lg-5">
 				<div class="row gx-4 gx-lg-5 justify-content-center">
 					<div class="col-md-10 col-lg-8 col-xl-7">
@@ -26,19 +26,17 @@
 		        </div>
 		    </div>
 		</header>
-        
-        <!-- Post Content-->
 
 		<div class="container px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<input type=button value="쇼핑 계속하기" style = "margin-right:auto; width:15%; background-color: #a1c4fd; color:#EEEEEE;" OnClick="window.location='products.jsp'">
 				<table class="table table-striped" style = "margin-left:auto; margin-right:auto; text-align:center; border: 3px solid #dddddd">
 					<tr>
-						<th>상품</th>
-						<th>가격</th>
-						<th>수량</th>
-						<th>소계</th>
-						<th>비고</th>
+						<th style="width: 50%">상품</th>
+						<th style="width: 10%">가격</th>
+						<th style="width: 10%">수량</th>
+						<th style="width: 10%">소계</th>
+						<th style="width: 20%">비고</th>
 					</tr>					
 				</table>
 				<table class="table table-striped" style = "margin-left:auto; margin-right:auto; text-align:center; border: 3px solid #dddddd">
@@ -54,11 +52,11 @@
 							sum = sum + total;
 					%>
 					<tr>
-						<td><%=product.getpID()%> - <%=product.getpName()%></td>
-						<td><%=product.getUnitPrice()%></td>
-						<td><%=product.getQuantity()%></td>
-						<td><%=total%></td>
-						<td><a href="./removeCart.jsp?id=<%=product.getpID()%>" class="badge badge-danger" style= "color: #000000" >삭제</a></td>
+						<td style="width: 50%"><%=product.getpID()%> - <%=product.getpName()%></td>
+						<td style="width: 10%"><%=product.getUnitPrice()%></td>
+						<td style="width: 10%"><%=product.getQuantity()%></td>
+						<td style="width: 10%"><%=total%></td>
+						<td style="width: 20%"><a href="./removeCart.jsp?id=<%=product.getpID()%>" class="badge badge-danger" style= "color: #000000" >삭제</a></td>
 					</tr>
 					<%
 						}

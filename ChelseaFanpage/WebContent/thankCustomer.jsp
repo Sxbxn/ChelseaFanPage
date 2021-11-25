@@ -3,7 +3,7 @@
 <%@ page import="java.net.URLDecoder"%>
     
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<%@ include file="header.jsp"%>
 
 	<body>
@@ -29,7 +29,7 @@
 			}
 		%>	
 		
-		<header class="masthead" style="background-image: url('assets/img/post.jpg')">
+		<header class="masthead" style="background-image: url('assets/img/thank.jpg')">
 			<div class="container position-relative px-4 px-lg-5">
 				<div class="row gx-4 gx-lg-5 justify-content-center">
 					<div class="col-md-10 col-lg-8 col-xl-7">
@@ -43,8 +43,6 @@
 		    </div>
 		</header>
         
-        <!-- Post Content-->
-
 		<div class="container px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-md-10 col-lg-8 col-xl-7">

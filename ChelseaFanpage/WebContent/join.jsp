@@ -1,17 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-	<%@ include file="header.jsp"%>
+<html>
+<%@ include file="header.jsp"%>
 	
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 
-
 <body>
-	<!-- Page Header-->
+
 	<header class="masthead" style="background-image: url('assets/img/index.jpg')">
 	     <div class="container position-relative px-4 px-lg-5">
 	         <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -49,7 +47,6 @@
 				</form>
 			</div>
 	</div>
-	
 	
 		<jsp:include page="footer.jsp" />
 

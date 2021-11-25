@@ -3,7 +3,7 @@
 <%@ page import="java.sql.*"%>
     
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<script type="text/javascript">
 		function deleteConfirm(id) {
 			if (confirm("해당 상품을 삭제합니다!!") == true)
@@ -30,8 +30,7 @@
 		        </div>
 		    </div>
 		</header>
-        
-        <!-- Post Content-->
+
 
 		<div class="container px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">

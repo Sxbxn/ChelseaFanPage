@@ -7,7 +7,7 @@
 <%@ page import="java.util.ArrayList" %>    
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<%@ include file="header.jsp"%>
 	
 	<%
@@ -66,11 +66,11 @@
 				<%
 					if(pageNumber != 1) {
 				%>
-					<a href="post.jsp?pageNumber=<%=pageNumber - 1%>" class="btn btn-success btn-arraw-left" style="margin-right:auto; width:8%; background-color: #a1c4fd; color:#000000;">이전</a> 
+					<a href="post.jsp?pageNumber=<%=pageNumber - 1%>" class="btn btn-success btn-arraw-left" style="margin-right:auto; width:8%; background-color: #a1c4fd; color:#000000;">다음</a> 
 				<%
 					} if(boardDAO.nextPage(pageNumber + 1)) {
 				%>
-					<a href="post.jsp?pageNumber=<%=pageNumber + 1%>" class="btn btn-success btn-arraw-right" style="margin-right:auto; width:8%; background-color: #a1c4fd; color:#000000;">다음</a>
+					<a href="post.jsp?pageNumber=<%=pageNumber + 1%>" class="btn btn-success btn-arraw-right" style="margin-right:auto; width:8%; background-color: #a1c4fd; color:#000000;">이전</a>
 				<%
 					}
 				%> 

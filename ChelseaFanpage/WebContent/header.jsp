@@ -32,18 +32,22 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto py-4 py-lg-0">
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.jsp">Main</a></li>
-                
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="products.jsp">굿즈</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.jsp">응원의 한마디</a></li>
-                
-
-		
+               		
 		<% 
 			if(userID != null) {
 		%>  
             <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="cart.jsp">장바구니</a></li>			              
 			<li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="logoutAction.jsp">로그아웃</a></li>
 		<%
+				if(userID.equals("subin")) {
+					%>                
+					<li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="addProduct.jsp">상품 등록</a></li>
+		            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="editProduct.jsp?edit=update">상품 수정</a></li>
+		            <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="editProduct.jsp?edit=delete">상품 삭제</a></li>
+				<%
+				}
 			}
 		%>
                 
@@ -55,19 +59,6 @@
 		<%
 			}
 		%>
-		
-		<% 
-			if(userID != "subin") {
-		%>                
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="addProduct.jsp">상품 등록</a></li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="editProduct.jsp?edit=update">상품 수정</a></li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="editProduct.jsp?edit=delete">상품 삭제</a></li>
-		<%
-			}
-		%>
-		
-		
-		
             </ul>
         </div>
     </div>

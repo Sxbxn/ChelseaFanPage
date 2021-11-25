@@ -6,7 +6,7 @@
 <%@ page import="java.util.ArrayList" %>    
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<%@ include file="header.jsp"%>
 	
 	<body>
@@ -34,8 +34,6 @@
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 		%>
-        
-        <!-- Post Content-->
 
 		<div class="container px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">

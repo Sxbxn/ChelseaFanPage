@@ -5,14 +5,14 @@
 	<%@ include file="header.jsp"%>
 
 	<body>
-		<header class="masthead" style="background-image: url('assets/img/post.jpg')">
+		<header class="masthead" style="background-image: url('assets/img/q.jpg')">
 			<div class="container position-relative px-4 px-lg-5">
 				<div class="row gx-4 gx-lg-5 justify-content-center">
 					<div class="col-md-10 col-lg-8 col-xl-7">
 		                <div class="site-heading">
 		                    <h1>상품 아이디 오류</h1>
 		                    <br>
-							<span class="subheading">응원의 한마디 남겨주세요!</span>
+							<span class="subheading">상품 아이디를 확인해주세요!!</span>
 						</div>
 		            </div>
 		        </div>
@@ -21,7 +21,7 @@
         
         <!-- Post Content-->
 
-		<div class="container px-4 px-lg-5">
+		<div class="container position-relative px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<h2 class="alert alert-danger">해당 상품이 존재하지 않습니다.</h2>
 			</div>
@@ -30,7 +30,7 @@
 		<div class="container px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<p><%=request.getRequestURL()%>?<%=request.getQueryString()%>
-				<p><a href="products.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a>			
+				<p><a href="products.jsp" class="btn btn-secondary">상품 목록 &raquo;</a>			
 			</div>
 		</div>
 

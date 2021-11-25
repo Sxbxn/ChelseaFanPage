@@ -1,14 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <%@ page import="dto.Product"%>
 <%@ page import="dao.ProductRepository"%>    
-
 <%@ page errorPage ="exceptionNoProductId.jsp"%>
-
     
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<%@ include file="header.jsp"%>
 	
 	<script type="text/javascript">
@@ -42,8 +39,6 @@
 			Product product = dao.getProductById(id);
 		%>
         
-        <!-- Post Content-->
-
 		<div class="container px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class ="col-md-5">

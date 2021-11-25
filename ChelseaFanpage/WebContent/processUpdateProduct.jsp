@@ -77,5 +77,3 @@
 
 	response.sendRedirect("editProduct.jsp?edit=update");
 %>
-
-
