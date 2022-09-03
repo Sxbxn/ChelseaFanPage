@@ -3,8 +3,8 @@ JSP를 활용하여 개발 진행
 상품 조회ㆍ구매ㆍ수정, 게시판 등의 기능이 있는 페이지
 
 ## 📽 시연 영상
-![11](https://user-images.githubusercontent.com/79958455/188268112-4f998904-6fe0-4839-b60a-e60b9ecca951.gif)  
-![22](https://user-images.githubusercontent.com/79958455/188268139-6ee98db1-ff85-4f99-b4e1-4dd5d68b0431.gif)
+![1-min](https://user-images.githubusercontent.com/79958455/188282658-ca815ba8-df2e-4c53-825d-fa735afc9fe3.gif)  
+![2-min](https://user-images.githubusercontent.com/79958455/188282673-c35f69de-8a69-4bb4-96d6-edc55ab93e5c.gif)
 
 ## 🔍 개발 동기 및 목적, 필요성
 저는 평소에 축구 경기 시청을 즐겨하며, __첼시(Chelsea)__ 라는 잉글랜드 축구팀의 열렬한 팬입니다.  
